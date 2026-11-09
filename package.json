@@ -1,0 +1,1 @@
+{"description":"コマンドラインの在庫管理ツール","devDependencies":{"@types/node":"^20.0.0","typescript":"^5.0.0"},"keywords":["inventory","cli","typescript"],"license":"MIT","main":"dist/main.js","name":"typescript-inventory","scripts":{"build":"tsc","start":"node dist/main.js"},"version":"1.0.0"}
