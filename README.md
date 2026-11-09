@@ -1,53 +1,76 @@
+English | [日本語](ja/README.md) | [한국어](ko/README.md)
+
 # typescript-inventory
 
-コマンドラインで動くシンプルな在庫管理ツールです。商品の追加・一覧・入庫・出庫・削除と、在庫金額合計の表示ができます。データは `inventory.json` に保存されます。
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-## 必要環境
+## Overview
 
-- Node.js 16 以上
-- TypeScript 5.0 以上（devDependencies に含まれます）
+A simple command-line inventory management tool. You can add products, list them, stock in/out, delete products, and view the total inventory value. Data is stored in `inventory.json`.
 
-## セットアップ
+## Demo
+
+![Demo](docs/demo.png)
+
+*Actual output. The CLI interface is in Japanese.*
+
+## Features
+
+- Add products with name, unit price, and quantity
+- List all products with subtotals and total inventory value
+- Stock in (increase) and stock out (decrease) quantities
+- Delete products
+- Display help for available commands
+- No external runtime libraries required
+
+## Requirements
+
+- Node.js 16 or higher
+- TypeScript 5.0 or higher (included in devDependencies)
+
+## Quick Start
 
 ```bash
+git clone https://github.com/mivork/typescript-inventory.git
+cd typescript-inventory
 npm install
 npm run build
-```
-
-## 使い方
-
-```bash
-# 商品を追加
 npm start -- add モニター 35000 10
-npm start -- add キーボード 8500 25
-
-# 商品一覧と在庫金額を表示
 npm start -- list
-
-# 入庫（在庫を増やす）
-npm start -- stock 1 5
-
-# 出庫（在庫を減らす）
-npm start -- stock 1 -3
-
-# 商品を削除
-npm start -- delete 1
-
-# ヘルプを表示
-npm start -- help
 ```
 
-## 出力例
+## Usage
+
+| Command | Description |
+|---|---|
+| `add <name> <price> <quantity>` | Add a product |
+| `list` | List all products and total inventory value |
+| `stock <product ID> <quantity>` | Stock in (positive) or stock out (negative) |
+| `delete <product ID>` | Delete a product |
+| `help` | Display help |
+
+### Example Output
 
 ```
+
   ID    商品名                単価     在庫数          小計
   -------------------------------------------------------
   1     モニター          35000円      10個      350000円
   2     キーボード         8500円      25個      212500円
   -------------------------------------------------------
   商品数: 2  在庫金額合計: 562,500円
+
 ```
 
-## 補足
+## Data Format
 
-`typescript` のみ devDependencies に含まれます。外部ランタイムライブラリは使用していません。
+Products are stored in `inventory.json` in JSON format.
+
+## Notes
+
+Only `typescript` is included in devDependencies. No external runtime libraries are used.
+
+## License
+
+This project is licensed under the MIT License.
